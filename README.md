@@ -31,7 +31,7 @@ Exemplo:
 Exemplo: 
 > ./comb 5 entrada.txt
 
-#### ___Combinação___:
+### ___Combinação___:
 #### Executar: ./(executavel) (n_de_valores) (tamanho_da_combinacao) (arquivo)
 
 Exemplo:
@@ -43,7 +43,7 @@ Exemplo:
 Exemplo: 
 > python3 comb.py 5 entrada.txt
 
-#### ___Combinação___:
+### ___Combinação___:
 #### Executar: python3 (codigo_fonte) (n_de_valores) (tamanho_da_combinacao) (arquivo)
 
 Exemplo:
