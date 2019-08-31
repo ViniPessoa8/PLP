@@ -13,15 +13,15 @@ Exemplo:
 Exemplo: 
 > java perm 5 entrada.txt
 
-#### Combinação:
-Executar: java (executavel) (n_de_valores) (tamanho_da_combinacao) (arquivo)
+### ___Combinação___:
+#### Executar: java (executavel) (n_de_valores) (tamanho_da_combinacao) (arquivo)
 
 Exemplo:
 > java comb 5 3 entrada.txt
 
 ## ___C___
 
-Compilar: gcc (codigo_fonte) -o (nome_do_executavel)
+#### Compilar: gcc (codigo_fonte) -o (nome_do_executavel)
 
 Exemplo:
 > gcc comb.c -o comb
@@ -31,8 +31,8 @@ Exemplo:
 Exemplo: 
 > ./comb 5 entrada.txt
 
-#### Combinação:
-Executar: ./(executavel) (n_de_valores) (tamanho_da_combinacao) (arquivo)
+#### ___Combinação___:
+#### Executar: ./(executavel) (n_de_valores) (tamanho_da_combinacao) (arquivo)
 
 Exemplo:
 > ./comb 5 3 entrada.txt
@@ -43,8 +43,8 @@ Exemplo:
 Exemplo: 
 > python3 comb.py 5 entrada.txt
 
-#### Combinação:
-Executar: python3 (codigo_fonte) (n_de_valores) (tamanho_da_combinacao) (arquivo)
+#### ___Combinação___:
+#### Executar: python3 (codigo_fonte) (n_de_valores) (tamanho_da_combinacao) (arquivo)
 
 Exemplo:
 > python3 comb.py 5 3 entrada.txt
