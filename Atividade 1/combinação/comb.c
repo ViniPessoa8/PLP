@@ -34,7 +34,7 @@ void imprimeVet(int* vet, int tam){
     }
 }
 
-void CombGenerico(int* list,int tam, int step, int* listToPrint, int tamListToPrint) {
+void realCombGenerico(int* list,int tam, int step, int* listToPrint, int tamListToPrint) {
     
 
     if(step == 1){
@@ -63,7 +63,7 @@ void CombGenerico(int* list,int tam, int step, int* listToPrint, int tamListToPr
             }
             aux[tamListToPrint] = list[i];
             
-            CombGenerico(subArray(list, i + 1, tam), tam-1-i, step - 1, aux, tamListToPrint+1);
+            realCombGenerico(subArray(list, i + 1, tam), tam-1-i, step - 1, aux, tamListToPrint+1);
         }
     }
 }
@@ -80,7 +80,7 @@ void combGenerico(int vet[],int tam, int step){
             if(step + i > tam) break;
             int aux[1] = {vet[i]};
 
-            CombGenerico(subArray(vet, i+1, tam), tam-i-1, step - 1, aux, 1);
+            realCombGenerico(subArray(vet, i+1, tam), tam-i-1, step - 1, aux, 1);
         }
     }
     
