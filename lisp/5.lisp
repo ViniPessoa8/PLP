@@ -1,0 +1,10 @@
+(defun tres-and (a b c)
+    (princ "operacao AND com 3 booleanos: ") (princ (and a b c))
+    (fresh-line)
+)
+
+(defun main()
+    (let ((x t) (y nil) (z nil))
+    (tres-and x y z)
+    )
+)
