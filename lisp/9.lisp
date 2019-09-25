@@ -1,11 +1,13 @@
 (defun fibonacci (n)
-    (do ((a 1 b)
-        (b 1 (print (+ a b)))
-        (n n (1- n)))
-        ((zerop n) b))
+    (if (< n 2) 
+    n
+    (+ (fibonacci (- n 1)) (fibonacci (- n 2))))
 )
 
 (defun main()
     (princ "Fibonacci ate o numero: ")
-    (fibonacci (read))
+    (loop for i from 1 to (read)
+        do (princ (fibonacci i))
+        (fresh-line)
+    )
 )
