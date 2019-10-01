@@ -27,15 +27,12 @@ gerou(darth_vader, luke).
 gerou(darth_vader, leia).
 gerou(padme, luke).
 gerou(padme, leia).
-gerou(luke, rey).
 
 % Força
 
 lightside(yoda).
 lightside(leia).
 lightside(rey).
-lightside(padme).
-lightside(shmi).
 lightside(luke).
 
 darkside(darth_sidious).
