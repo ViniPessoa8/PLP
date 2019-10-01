@@ -22,12 +22,12 @@ masculino(darth_sidious).
 
 % Hierarquia
 
-pai(darth_vader, luke).
-pai(darth_vader, leia).
-pai(padme, luke).
-pai(padme, leia).
-pai(shmi, darth_vader).
-pai(luke, rey).
+gerou(shmi, darth_vader).
+gerou(darth_vader, luke).
+gerou(darth_vader, leia).
+gerou(padme, luke).
+gerou(padme, leia).
+gerou(luke, rey).
 
 % Força
 
@@ -40,6 +40,8 @@ lightside(luke).
 
 darkside(darth_sidious).
 darkside(darth_vader).
+
+trocou(darth_vader).
 
 novato(forca).
 padawan(forca).
@@ -57,8 +59,6 @@ lorde_sombrio(darth_sidious).
 mestre(yoda, luke).
 mestre(darth_sidious, darth_vader).
 
-trocou(darth_vader).
-
 jedi(yoda).
 jedi(luke).
 
@@ -68,33 +68,35 @@ sith(darth_sidious).
 matou(darth_vader, darth_sidious).
 matou(darth_sidious, darth_vader).
 matou(yoda, yoda).
+matou(luke,padme).
+matou(leia,padme).
 
 % Regras
 pai(A, B) :-
     masculino(A),
-    pai(A, B).
+    gerou(A, B).
 
 mae(A, B) :-
     feminino(A),
-    pai(A, B).
+    gerou(A, B).
 
 avo(A, B) :-
-    pai(A, X),
-    pai(X, B);
+    gerou(A, X),
+    gerou(X, B);
 	mae(A, X),
     mae(X, B).
 
 tio(T, A) :-
     masculino(T),
     irmaos(T, X),
-    pai(X, A).
+    gerou(X, A).
 
 tia(T, A) :-
     feminino(T),
     irmaos(T, X),
-    pai(X, A).
+    gerou(X, A).
 
 irmaos(X, Y) :-
-    pai(Z, X),
-    pai(Z, Y),
+    gerou(Z, X),
+    gerou(Z, Y),
     X\=Y.
