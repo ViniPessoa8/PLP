@@ -1,0 +1,15 @@
+(defun primo(n)
+    (if (<= n 1) (return-from primo nil))
+    (if (= n 2) (return-from primo t))
+    (loop for i from 2 to n
+        do (if (= (mod n i) 0)
+            (return-from primo nil)
+            (return-from primo t)
+        )
+    )
+)
+
+(defun main()
+    (princ (primo (read)))
+    (fresh-line)
+)

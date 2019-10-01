@@ -1,0 +1,10 @@
+(defun juntar-string(a b)
+    (cond ((string-equal a b) 
+    (princ a))
+    ((string-not-equal a b)
+    (princ(concatenate 'string a b))))
+)
+
+(defun main()
+    (juntar-string (read-line) (read-line))
+)
