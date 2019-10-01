@@ -1,16 +1,17 @@
 % Fatos
 
+forca.
 darth_vader.
 padme.
 luke.
 leia.
-ray.
+rey.
 shmi.
 yoda.
 darth_sidious.
 
 feminino(leia).
-feminino(ray).
+feminino(rey).
 feminino(padme).
 feminino(shmi).
 
@@ -40,12 +41,23 @@ lightside(luke).
 darkside(darth_sidious).
 darkside(darth_vader).
 
-trocou(darth_vader).
+novato(forca).
+padawan(forca).
+cavaleiro_jedi(forca).
+mestre_jedi(luke).
+mestre_conselheiro(forca).
+grao_mestre(yoda).
 
-skywalker(luke).
-skywalker(darth_vader).
-skywalker(leia).
-skywalker(rey).
+lacaio(forca).
+novico(forca).
+guerreiro(forca).
+lorde_sith(darth_vader).
+lorde_sombrio(darth_sidious).
+
+mestre(yoda, luke).
+mestre(darth_sidious, darth_vader).
+
+trocou(darth_vader).
 
 jedi(yoda).
 jedi(luke).
@@ -53,15 +65,11 @@ jedi(luke).
 sith(darth_vader).
 sith(darth_sidious).
 
-mestre(yoda, luke).
-mestre(darth_sidious, darth_vader).
-
 matou(darth_vader, darth_sidious).
 matou(darth_sidious, darth_vader).
 matou(yoda, yoda).
 
 % Regras
-
 pai(A, B) :-
     masculino(A),
     pai(A, B).
