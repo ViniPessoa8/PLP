@@ -5,9 +5,10 @@ public class main {
 
     public static void main(String[] args) {
         int n_Tiros = 10;
+        int n_Corredores = 5;
         int menorTempo = 10000;
-        int[] tempos = new int[5];
-        Corredor[] corredores = new Corredor[5];
+        int[] tempos = new int[n_Corredores];
+        Corredor[] corredores = new Corredor[n_Corredores];
         
         
         for (int i = 0; i < n_Tiros; i++){
@@ -52,7 +53,7 @@ public class main {
         
         // Imprime o total de tempo em que cada um levou
         System.out.println("\n\nTOTAL DE TEMPOS (ms)\n");
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < n_Corredores; i++){
             System.out.println(corredores[i].getNome() + ": " + tempos[i]);
             if (tempos[i] < menorTempo){
                 menorTempo = tempos[i];
@@ -60,7 +61,7 @@ public class main {
         }
         System.out.println("\nMenor Tempo = " + menorTempo);
         
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < n_Corredores; i++){
             if (tempos[i] == menorTempo){
                 System.out.println("\nVencedor(a): "+corredores[i].getNome());
             }

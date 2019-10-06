@@ -34,13 +34,14 @@ public class Corredor extends Thread{
 
         saida += "|" + tempo;
 
-        // Espera a "tempo" em ms
+        // Espera o tempo em ms
         try {
             Thread.sleep(tempo);
         }
         catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+        
         System.out.println(saida);
         saida = "";
     }
