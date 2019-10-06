@@ -6,17 +6,19 @@ public class main {
     public static void main(String[] args) {
         int n_Tiros = 10;
         int menorTempo = 10000;
-        int[] velocidades = new int[5];
+        int[] tempos = new int[5];
         Corredor[] corredores = new Corredor[5];
         
         
         for (int i = 0; i < n_Tiros; i++){
+            // Instancia corredores
             Corredor joao = new Corredor("João   ");
             Corredor maria = new Corredor("Maria  ");
             Corredor felipe = new Corredor("Felipe ");
             Corredor carlos = new Corredor("Carlos ");
             Corredor daniela = new Corredor("Daniela");
             
+            // Adiciona corredores no array
             corredores[0] = joao;
             corredores[1] = maria;
             corredores[2] = felipe;
@@ -25,38 +27,41 @@ public class main {
 
             System.out.println("\n\nCorrida " + (i+1) + "\n");
             
-            
+            // Inicio da corrida
             joao.start();
             maria.start();
             felipe.start();
             daniela.start();
             carlos.start();
             
+            // Espera de 2s para que a corrida acabe e os resultados parciais sejam mostrados
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            velocidades[0] +=  joao.getVelocidade();
-            velocidades[1] +=  maria.getVelocidade();
-            velocidades[2] +=  felipe.getVelocidade();
-            velocidades[3] +=  carlos.getVelocidade();
-            velocidades[4] +=  daniela.getVelocidade();
+            // Soma as tempos
+            tempos[0] += joao.getTempo();
+            tempos[1] += maria.getTempo();
+            tempos[2] += felipe.getTempo();
+            tempos[3] += carlos.getTempo();
+            tempos[4] += daniela.getTempo();
             
         }
         
+        // Imprime o total de tempo em que cada um levou
         System.out.println("\n\nTOTAL DE TEMPOS (ms)\n");
         for (int i = 0; i < 5; i++){
-            System.out.println(corredores[i].getNome() + ": " + velocidades[i]);
-            if (velocidades[i] < menorTempo){
-                menorTempo = velocidades[i];
+            System.out.println(corredores[i].getNome() + ": " + tempos[i]);
+            if (tempos[i] < menorTempo){
+                menorTempo = tempos[i];
             }
         }
         System.out.println("\nMenor Tempo = " + menorTempo);
         
         for (int i = 0; i < 5; i++){
-            if (velocidades[i] == menorTempo){
+            if (tempos[i] == menorTempo){
                 System.out.println("\nVencedor(a): "+corredores[i].getNome());
             }
         }
