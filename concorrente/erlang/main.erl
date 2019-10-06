@@ -28,35 +28,15 @@ lap(First) ->
     end,
 
     [
-        receive {PID1, Name1, Lap1, Num1} ->
-            io:format("~s finished the lap ~p with ~p seconds~n", [Name1, Lap1, Num1])
-        end,
-
-        receive {PID2, Name2, Lap2, Num2} ->
-            io:format("~s finished the lap ~p with ~p seconds~n", [Name2, Lap2, Num2])
-        end,
-
-        receive {PID3, Name3, Lap3, Num3} ->
-            io:format("~s finished the lap ~p with ~p seconds~n", [Name3, Lap3, Num3])
-        end,
-
-        receive {PID4, Name4, Lap4, Num4} ->
-            io:format("~s finished the lap ~p with ~p seconds~n", [Name4, Lap4, Num4])
-        end,
-
-        receive {PID5, Name5, Lap5, Num5} ->
-            io:format("~s finished the lap ~p with ~p seconds~n", [Name5, Lap5, Num5])
-        end
+        receive {PID1, Name1, Lap1, Num1} -> io:format("~s finished the lap ~p with ~p seconds~n", [Name1, Lap1, Num1]) end,
+        receive {PID2, Name2, Lap2, Num2} -> io:format("~s finished the lap ~p with ~p seconds~n", [Name2, Lap2, Num2]) end,
+        receive {PID3, Name3, Lap3, Num3} -> io:format("~s finished the lap ~p with ~p seconds~n", [Name3, Lap3, Num3]) end,
+        receive {PID4, Name4, Lap4, Num4} -> io:format("~s finished the lap ~p with ~p seconds~n", [Name4, Lap4, Num4]) end,
+        receive {PID5, Name5, Lap5, Num5} -> io:format("~s finished the lap ~p with ~p seconds~n", [Name5, Lap5, Num5]) end
     ],
-
     io:format("~n"),
 
-    PID1 ! go,
-    PID2 ! go,
-    PID3 ! go,
-    PID4 ! go,
-    PID5 ! go,
+    PID1 ! go, PID2 ! go, PID3 ! go, PID4 ! go, PID5 ! go,
     lap(false).
 
-start() ->
-    spawn(main, lap, [true]).
+start() -> spawn(main, lap, [true]).
